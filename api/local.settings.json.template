@@ -1,0 +1,15 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AZURE_TENANT_ID": "<your-tenant-id-guid>",
+    "AZURE_CLIENT_ID": "<app-registration-client-id-guid>",
+    "AZURE_CLIENT_SECRET": "<app-registration-client-secret>",
+    "FROM_MAILBOX": "info@maventechno.com",
+    "TO_EMAIL": "info@maventechno.com"
+  },
+  "Host": {
+    "CORS": "*"
+  }
+}
