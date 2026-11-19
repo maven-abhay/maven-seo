@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Primary SEO -->
+  <title>Umbraco Upgrade Guide (7 & 8 to Latest) | Maven Technosoft</title>
+  <meta name="description" content="Planning an Umbraco upgrade? What changes from Umbraco 7 and 8, how to audit, plan and migrate, protect SEO with redirects and avoid common pitfalls.">
+  <meta name="keywords" content="Umbraco upgrade, Umbraco upgrade guide, Umbraco 7 upgrade, Umbraco 8 upgrade, Umbraco migration, Umbraco LTS, Umbraco .NET upgrade, Umbraco developers, CMS upgrade SEO, Umbraco content migration">
+  <meta name="author" content="Manoj K Joshi">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#ff5821">
+  <link rel="canonical" href="https://www.maventechno.com/insights/umbraco-upgrade-guide">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Maven Technosoft">
+  <meta property="og:title" content="Umbraco Upgrade Guide (7 &amp; 8 to Latest) | Maven Technosoft">
+  <meta property="og:description" content="Planning an Umbraco upgrade? What changes from Umbraco 7 and 8, how to audit, plan and migrate, protect SEO with redirects and avoid common pitfalls.">
+  <meta property="og:url" content="https://www.maventechno.com/insights/umbraco-upgrade-guide">
+  <meta property="og:image" content="https://www.maventechno.com/assets/img/insights/umbraco-upgrade-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Umbraco upgrade guide: move to a supported version without losing content or SEO">
+  <meta property="article:published_time" content="2026-11-19">
+  <meta property="article:modified_time" content="2026-11-19">
+  <meta property="article:section" content="CMS">
+  <link rel="preload" as="image" href="/assets/img/insights/umbraco-upgrade-cover.webp" type="image/webp" fetchpriority="high">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Umbraco Upgrade Guide (7 &amp; 8 to Latest) | Maven Technosoft">
+  <meta name="twitter:description" content="Planning an Umbraco upgrade? What changes from Umbraco 7 and 8, how to audit, plan and migrate, protect SEO with redirects and avoid common pitfalls.">
+  <meta name="twitter:image" content="https://www.maventechno.com/assets/img/insights/umbraco-upgrade-cover.jpg">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.maventechno.com/insights/umbraco-upgrade-guide#webpage",
+    "url": "https://www.maventechno.com/insights/umbraco-upgrade-guide",
+    "name": "Umbraco Upgrade Guide (7 & 8 to Latest) | Maven Technosoft",
+    "description": "Planning an Umbraco upgrade? What changes from Umbraco 7 and 8, how to audit, plan and migrate, protect SEO with redirects and avoid common pitfalls.",
+    "isPartOf": {
+      "@id": "https://www.maventechno.com/#website"
+    },
+    "about": {
+      "@id": "https://www.maventechno.com/#organization"
+    },
+    "inLanguage": "en-IN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.maventechno.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Insights",
+        "item": "https://www.maventechno.com/insights"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Umbraco Upgrade Guide",
+        "item": "https://www.maventechno.com/insights/umbraco-upgrade-guide"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Umbraco 8 still supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Umbraco 7 and Umbraco 8 have both reached end of life and no longer receive security updates, so sites on them should plan an upgrade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I upgrade directly from Umbraco 7 or 8 to the latest version?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not with a simple in-place upgrade. Because modern Umbraco runs on a different .NET platform, code is moved or rebuilt and content is migrated. Within modern versions, upgrades are incremental."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does an Umbraco upgrade take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the starting version, the amount of custom code and packages, and the volume of content. An audit gives a reliable estimate before work starts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will an Umbraco upgrade affect our search rankings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not if it is planned well. Keep URLs where possible, add 301 redirects for any that change, carry over page metadata and monitor Search Console after launch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should we choose an LTS or STS version of Umbraco?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For most business websites an LTS version is the better choice, because it is supported for longer and gives a stable base."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": "https://www.maventechno.com/insights/umbraco-upgrade-guide#article",
+    "headline": "Umbraco Upgrade Guide: How to Move From Umbraco 7 or 8 to a Supported Version",
+    "description": "Planning an Umbraco upgrade? What changes from Umbraco 7 and 8, how to audit, plan and migrate, protect SEO with redirects and avoid common pitfalls.",
+    "image": [
+      "https://www.maventechno.com/assets/img/insights/umbraco-upgrade-cover.jpg",
+      "https://www.maventechno.com/assets/img/insights/umbraco-legacy-vs-modern.webp",
+      "https://www.maventechno.com/assets/img/insights/umbraco-upgrade-path.webp"
+    ],
+    "datePublished": "2026-11-19",
+    "dateModified": "2026-11-19",
+    "author": {
+      "@type": "Person",
+      "name": "Manoj K Joshi",
+      "jobTitle": "CTO & Co-Founder",
+      "url": "https://www.linkedin.com/in/manojkjoshi/",
+      "sameAs": [
+        "https://www.linkedin.com/in/manojkjoshi/"
+      ],
+      "image": "https://www.maventechno.com/assets/img/team/manoj.jpg",
+      "worksFor": {
+        "@type": "Organization",
+        "@id": "https://www.maventechno.com/#organization",
+        "name": "Maven Technosoft",
+        "url": "https://www.maventechno.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.maventechno.com/assets/img/maven-logo.png",
+          "width": 1711,
+          "height": 766
+        }
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.maventechno.com/#organization",
+      "name": "Maven Technosoft",
+      "url": "https://www.maventechno.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.maventechno.com/assets/img/maven-logo.png",
+        "width": 1711,
+        "height": 766
+      }
+    },
+    "mainEntityOfPage": {
+      "@id": "https://www.maventechno.com/insights/umbraco-upgrade-guide#webpage"
+    },
+    "articleSection": "CMS",
+    "inLanguage": "en-IN",
+    "keywords": "Umbraco upgrade, Umbraco upgrade guide, Umbraco 7 upgrade, Umbraco 8 upgrade, Umbraco migration, Umbraco LTS, Umbraco .NET upgrade, Umbraco developers, CMS upgrade SEO, Umbraco content migration",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Umbraco"
+      },
+      {
+        "@type": "Thing",
+        "name": "Content management system"
+      },
+      {
+        "@type": "Thing",
+        "name": "Website migration"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Main CSS Files -->
+  <link href="/assets/css/tokens.css?v=2026111902" rel="stylesheet">
+  <link href="/assets/css/style.css?v=2026111902" rel="stylesheet">
+  <link href="/assets/css/maven-custom.css?v=2026111902" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-start">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@maventechno.com">info@maventechno.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:+917827121299">+91 7827 1212 99</a></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <a href="/" class="maven-logo-link" aria-label="Maven Technosoft - Inspired by Excellence">
+          <picture>
+            <source srcset="/assets/img/maven-logo.webp" type="image/webp">
+            <source srcset="/assets/img/maven-logo.png" type="image/png">
+            <img src="/assets/img/maven-logo.svg"
+                 width="250" height="112"
+                 alt="Maven Technosoft - Inspired by Excellence"
+                 class="maven-logo-img"
+                 onerror="this.onerror=null;this.src='/assets/img/maven-logo.svg';">
+          </picture>
+        </a>
+      </div>
+
+      <nav id="navbar" class="navbar" aria-label="Main">
+        <ul>
+          <li class="dropdown"><a class="nav-link" href="/industries"><span>Industries</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a>
+            <ul>
+              <li class="dropdown"><a href="/industries/airlines"><span>Airlines &amp; Travel</span> <i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+                <ul>
+                  <li><a href="/industries/airlines">Airlines overview</a></li>
+                  <li><a href="/industries/airlines#airline-ibe">IBE &amp; booking engines</a></li>
+                  <li><a href="/industries/airlines#airline-gds-ndc">GDS &amp; NDC integration</a></li>
+                  <li><a href="/industries/airlines#airline-ancillaries-loyalty">Ancillaries &amp; loyalty</a></li>
+                  <li><a href="/industries/airlines#airline-revenue-management">Revenue management</a></li>
+                  <li><a href="/industries/airlines#airline-ai-copilots">AI traveller copilots</a></li>
+                </ul>
+              </li>
+              <li><a href="/industries#eyecare-vision-health">Eyecare &amp; Vision Health</a></li>
+              <li><a href="/industries#transportation-logistics">Transportation &amp; Logistics</a></li>
+              <li><a href="/industries#hospitality-otas">Hospitality &amp; OTAs</a></li>
+              <li><a href="/industries#banking-financial-services">Banking &amp; Financial Services</a></li>
+              <li><a href="/industries">All industries</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="/ai-solutions">AI Solutions</a></li>
+          <li class="dropdown"><a class="nav-link" href="/services"><span>Services</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a>
+            <ul>
+              <li><a href="/services/airline-booking-engine">Airline booking engines</a></li>
+              <li><a href="/services/web-mobile-app-development">Web &amp; mobile apps</a></li>
+              <li><a href="/services/application-development-maintenance">Application maintenance</a></li>
+              <li><a href="/services/cloud-devops">Cloud &amp; DevOps</a></li>
+              <li><a href="/services/data-analytics">Data &amp; analytics</a></li>
+              <li><a href="/services/ai-development">AI &amp; ML development</a></li>
+              <li><a href="/services/ui-ux-cms">UI / UX &amp; CMS</a></li>
+              <li><a href="/services">All services</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="/case-studies">Case Studies</a></li>
+          <li><a class="nav-link active" href="/insights">Insights</a></li>
+          <li><a class="nav-link" href="/about">About</a></li>
+          <li><a class="getstarted" href="/#contact">Book a call</a></li>
+        </ul>
+        <button type="button" class="bi bi-list mobile-nav-toggle" aria-label="Open menu" aria-controls="navbar" aria-expanded="false"></button>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Page Header ======= -->
+    <section class="breadcrumbs page-header">
+      <div class="container">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/insights">Insights</a></li>
+          <li aria-current="page">Umbraco Upgrade Guide</li>
+        </ol>
+        <h1>Umbraco Upgrade Guide: How to Move From Umbraco 7 or 8 to a Supported Version</h1>
+        <p class="page-intro">Why legacy Umbraco sites need to move, what actually changes, and a step-by-step path that protects your content and search rankings.</p>
+        <p class="article-meta"><span><i class="bi bi-clock" aria-hidden="true"></i> 6 min read</span><span><i class="bi bi-person" aria-hidden="true"></i> By <a href="https://www.linkedin.com/in/manojkjoshi/" rel="author noopener" target="_blank">Manoj K Joshi</a>, CTO &amp; Co-Founder</span></p>
+      </div>
+    </section><!-- End Page Header -->
+
+    <section class="article-wrap">
+      <div class="container">
+        <div class="row justify-content-center">
+          <article class="col-lg-8 article-body">
+          <figure class="article-figure">
+            <img src="/assets/img/insights/umbraco-upgrade-cover.webp" width="1200" height="630" alt="Umbraco upgrade guide: move to a supported version without losing content or SEO" fetchpriority="high">
+            <figcaption>A planned Umbraco upgrade protects your content, URLs and search visibility.</figcaption>
+          </figure>
+
+          <p class="article-lead">Many organisations still run websites on Umbraco 7 or Umbraco 8. They work, so upgrading feels optional, until a security issue, a hosting change or a missing feature makes it urgent. This guide explains what changes, how to plan the move, and how to make sure your content and search rankings survive it.</p>
+
+          <nav class="article-toc" aria-label="In this article">
+            <p class="article-toc-title">In this article</p>
+            <ol>
+              <li><a href="#why">Why upgrade from Umbraco 7 or 8</a></li>
+              <li><a href="#changes">What changes in modern Umbraco</a></li>
+              <li><a href="#upgrade-or-rebuild">Upgrade or rebuild?</a></li>
+              <li><a href="#path">The four-step upgrade path</a></li>
+              <li><a href="#seo">Protecting SEO during the upgrade</a></li>
+              <li><a href="#version">Choosing your target version</a></li>
+              <li><a href="#pitfalls">Common pitfalls</a></li>
+              <li><a href="#faq">FAQs</a></li>
+            </ol>
+          </nav>
+
+          <h2 id="why">Why upgrade from Umbraco 7 or 8</h2>
+          <p>Both Umbraco 7 and Umbraco 8 have reached end of life, which means no more security fixes or updates. They also run on the older .NET Framework, which ties the site to Windows hosting and an ageing set of tools. Over time it becomes harder to host, harder to secure and harder to find developers who want to work on it.</p>
+          <p>Modern Umbraco runs on current, cross-platform .NET. It is faster to develop on, easier to host in the cloud, receives regular security updates and has a new, extensible backoffice for editors.</p>
+          <aside class="article-takeaways" aria-label="Key takeaways">
+            <p class="article-takeaways-title"><i class="bi bi-lightning-charge" aria-hidden="true"></i> Key takeaways</p>
+            <ul>
+              <li>Umbraco 7 and 8 have reached end of life and run on the older .NET Framework.</li>
+              <li>Moving to modern Umbraco is closer to a re-platform than a click-to-upgrade, so plan it as a project.</li>
+              <li>Audit packages and custom code first; they decide most of the effort.</li>
+              <li>Inventory every URL and set up 301 redirects so search rankings are protected.</li>
+            </ul>
+          </aside>
+
+          <h2 id="changes">What changes in modern Umbraco</h2>
+          <figure class="article-figure">
+            <picture>
+              <source media="(max-width: 600px)" srcset="/assets/img/insights/umbraco-legacy-vs-modern-mobile.webp" width="720" height="813">
+              <img src="/assets/img/insights/umbraco-legacy-vs-modern.webp" width="1200" height="560" alt="Comparison: legacy Umbraco 7 or 8 on .NET Framework versus modern Umbraco LTS on modern .NET" loading="lazy" decoding="async">
+            </picture>
+            <figcaption>Legacy Umbraco compared with a modern, supported Umbraco version.</figcaption>
+          </figure>
+          <ul>
+            <li><strong>The platform:</strong> since Umbraco 9, Umbraco runs on modern .NET instead of .NET Framework, so custom code, controllers and configuration must be updated.</li>
+            <li><strong>The backoffice:</strong> the editor interface was rebuilt from Umbraco 14 onwards. Custom backoffice extensions written for the old AngularJS backoffice need to be rewritten.</li>
+            <li><strong>Packages:</strong> some packages you rely on may have new versions, different replacements or no longer exist.</li>
+            <li><strong>Templates and data:</strong> views, property editors and stored content may need changes or migration to match the new versions.</li>
+          </ul>
+
+          <h2 id="upgrade-or-rebuild">Upgrade or rebuild?</h2>
+          <p>Within modern versions, upgrades are incremental: you move from one supported version to the next with relatively small changes. Moving from Umbraco 7 or 8 is different. Because the underlying platform changes, it is closer to a re-platform: content is migrated and code is moved or rebuilt on modern .NET.</p>
+          <p>That is also an opportunity. Many teams use the upgrade to clean up unused document types, simplify templates, improve page speed and refresh the design, so the effort delivers more than a version number.</p>
+
+          <h2 id="path">The four-step Umbraco upgrade path</h2>
+          <figure class="article-figure">
+            <picture>
+              <source media="(max-width: 600px)" srcset="/assets/img/insights/umbraco-upgrade-path-mobile.webp" width="720" height="1146">
+              <img src="/assets/img/insights/umbraco-upgrade-path.webp" width="1200" height="560" alt="Diagram: Umbraco upgrade path with four steps: audit, plan, upgrade and migrate, test and go live" loading="lazy" decoding="async">
+            </picture>
+            <figcaption>Audit, plan, upgrade and migrate, then test and go live.</figcaption>
+          </figure>
+          <h3>1. Audit</h3>
+          <p>Record the current Umbraco version, hosting, packages, custom code, integrations, document types, content volume and every public URL. This tells you where the real effort lies.</p>
+          <h3>2. Plan</h3>
+          <p>Choose the target version, decide how each package and custom feature will be replaced or rebuilt, and agree a migration, testing and rollback plan with clear dates.</p>
+          <h3>3. Upgrade and migrate</h3>
+          <p>Move the code to modern .NET, rebuild templates and editor experiences, then migrate content and media. Tools such as uSync can help move settings and content between environments.</p>
+          <h3>4. Test and go live</h3>
+          <p>Test pages, forms, search, integrations and editor workflows. Check performance and accessibility, set up redirects, then switch over and monitor closely for the first weeks.</p>
+
+          <h2 id="seo">Protecting SEO during the upgrade</h2>
+          <p>A CMS upgrade should never cost you search traffic. The key is to treat URLs and page metadata as part of the content you are migrating:</p>
+          <ul>
+            <li><strong>Inventory every URL</strong> from the current site, your sitemap and analytics before you start.</li>
+            <li><strong>Keep URLs where you can,</strong> and add a 301 redirect for every URL that changes.</li>
+            <li><strong>Carry over titles, meta descriptions, headings and structured data</strong> for each page.</li>
+            <li><strong>Update the XML sitemap</strong> and submit it in Google Search Console after launch.</li>
+            <li><strong>Watch Search Console</strong> for crawl errors and ranking changes in the weeks after go-live.</li>
+          </ul>
+
+          <h2 id="version">Choosing your target version</h2>
+          <p>Umbraco publishes long-term support (LTS) and short-term support (STS) versions. For most business websites, an LTS version is the right target: it receives updates for longer and gives you a stable base. Check the current Umbraco release and support schedule when you plan, and allow time for packages to support the version you choose.</p>
+
+          <h2 id="pitfalls">Common pitfalls to avoid</h2>
+          <ul>
+            <li>Underestimating custom backoffice code and package replacements.</li>
+            <li>Forgetting integrations such as forms, CRM, search and analytics.</li>
+            <li>Missing redirects for old URLs, which wastes years of search authority.</li>
+            <li>Not training editors on the new backoffice before launch.</li>
+            <li>Treating go-live as the end, with no monitoring or plan for the next upgrade.</li>
+          </ul>
+
+          <div class="article-cta">
+            <h2>How Maven Technosoft can help</h2>
+            <p>We implement and upgrade Umbraco websites. In our Umbraco project we moved a website from an ageing version to a supported one, migrating content and media and protecting search visibility with redirects.</p>
+            <p>Read the <a href="/case-studies#umbraco-cms-project">Umbraco case study</a>, see our <a href="/services/ui-ux-cms">UI/UX and CMS services</a>, or <a href="/#contact">talk to us</a> about your upgrade.</p>
+          </div>
+          <aside class="article-author" aria-label="About the author">
+            <img src="/assets/img/team/manoj.jpg" width="400" height="400" alt="Manoj K Joshi, CTO &amp; Co-Founder at Maven Technosoft" loading="lazy" decoding="async">
+            <div>
+              <p class="article-author-label">Written by</p>
+              <p class="article-author-name">Manoj K Joshi</p>
+              <p class="article-author-role">CTO &amp; Co-Founder, Maven Technosoft</p>
+              <p class="article-author-bio">Manoj K Joshi is CTO and Co-Founder of Maven Technosoft, the domain-driven technology and AI company he co-founded in 2017. He leads technology at Maven across software, data and AI work for airlines, travel and other high-transaction businesses.</p>
+              <a class="article-author-link" href="https://www.linkedin.com/in/manojkjoshi/" target="_blank" rel="author noopener"><i class="bi bi-linkedin" aria-hidden="true"></i> Manoj K Joshi on LinkedIn</a>
+            </div>
+          </aside>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="cs-faq section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Frequently Asked <span class="text-accent">Questions</span></h2>
+        </div>
+        <div class="cs-faq-list">
+          <details class="cs-faq-item">
+            <summary>Is Umbraco 8 still supported?</summary>
+            <p>No. Umbraco 7 and Umbraco 8 have both reached end of life and no longer receive security updates, so sites on them should plan an upgrade.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>Can I upgrade directly from Umbraco 7 or 8 to the latest version?</summary>
+            <p>Not with a simple in-place upgrade. Because modern Umbraco runs on a different .NET platform, code is moved or rebuilt and content is migrated. Within modern versions, upgrades are incremental.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>How long does an Umbraco upgrade take?</summary>
+            <p>It depends on the starting version, the amount of custom code and packages, and the volume of content. An audit gives a reliable estimate before work starts.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>Will an Umbraco upgrade affect our search rankings?</summary>
+            <p>Not if it is planned well. Keep URLs where possible, add 301 redirects for any that change, carry over page metadata and monitor Search Console after launch.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>Should we choose an LTS or STS version of Umbraco?</summary>
+            <p>For most business websites an LTS version is the better choice, because it is supported for longer and gives a stable base.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Page CTA ======= -->
+    <section class="page-cta">
+      <div class="container" data-aos="fade-up">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7">
+            <h2>Running an old Umbraco site?</h2>
+            <p>Tell us what you're working on. A Maven domain expert will get back to you within one business day.</p>
+            <a href="/#contact" class="maven-btn">Talk to Us</a>
+          </div>
+          <div class="col-lg-5">
+            <div class="related-links">
+              <h3>Explore more</h3>
+            <a href="/case-studies#umbraco-cms-project" class="related-link">Umbraco Case Study <i class="bx bx-chevron-right"></i></a>
+            <a href="/services/ui-ux-cms" class="related-link">UI / UX &amp; CMS Services <i class="bx bx-chevron-right"></i></a>
+            <a href="/services/application-development-maintenance" class="related-link">Application Maintenance <i class="bx bx-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Page CTA -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Maven Technosoft</h3>
+            <address>
+              Maven Technosoft Pvt. Ltd.<br>
+              First Floor, World Trade Tower, A-23<br>
+              Central Auto Market, Block B, Sector 16<br>
+              Noida, Uttar Pradesh 201301, India
+            </address>
+            <p>
+              <strong>Phone:</strong> <a href="tel:+917827121299">+91 7827 1212 99</a><br>
+              <strong>Email:</strong> <a href="mailto:info@maventechno.com">info@maventechno.com</a>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 footer-links">
+            <h4>Industries</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/industries/airlines">Airlines &amp; Travel</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/industries#eyecare-vision-health">Eyecare &amp; Vision Health</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/industries#transportation-logistics">Transportation &amp; Logistics</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/industries#hospitality-otas">Hospitality &amp; OTAs</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/industries#banking-financial-services">Banking &amp; Financial Services</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 footer-links">
+            <h4>Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/services/airline-booking-engine">Airline Booking Engines</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/ai-solutions">AI Solutions</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/services/web-mobile-app-development">Web &amp; Mobile</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/services/application-development-maintenance">Application Maintenance</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/services/cloud-devops">Cloud &amp; DevOps</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/services/data-analytics">Big Data &amp; Analytics</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/services/ui-ux-cms">UI / UX &amp; CMS</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/about">About us</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/#leadership">Leadership</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/case-studies">Case Studies</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/insights">Insights</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Stay in the Loop</h4>
+            <p>Get occasional notes from Maven on AI, data and travel-tech trends. No spam.</p>
+            <form id="maven-newsletter-form" action="/api/contact" method="POST">
+              <input type="email" name="email" placeholder="Your email" aria-label="Your email" required>
+              <input type="submit" value="Subscribe">
+              <div class="newsletter-feedback" aria-live="polite"></div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom d-lg-flex align-items-center py-4">
+      <div class="me-lg-auto text-center text-lg-start">
+        <div class="copyright">&copy; 2026 Maven Technosoft Pvt. Ltd. All rights reserved.</div>
+        <ul class="footer-legal">
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
+        <a href="https://www.facebook.com/MavenTechnosoft/" class="facebook" aria-label="Facebook" target="_blank" rel="noopener"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/maven-technosoft/" class="linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/assets/js/main.js?v=2026111902"></script>
+
+  <!-- Maven newsletter handler -->
+  <script src="/assets/js/maven-contact.js?v=2026111902"></script>
+
+</body>
+
+</html>
