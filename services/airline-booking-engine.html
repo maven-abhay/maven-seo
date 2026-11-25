@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Primary SEO -->
+  <title>Airline Booking Engine Development | Maven Technosoft</title>
+  <meta name="description" content="Airline booking engine and IBE development: flight search, fares, seat selection, payments, refunds and GDS/NDC integration for airlines and OTAs.">
+  <meta name="keywords" content="airline booking engine development, flight booking engine, internet booking engine, IBE development, flight booking system, airline reservation software, GDS integration, NDC integration, airline refund automation, OTA booking engine">
+  <meta name="author" content="Maven Technosoft Pvt. Ltd.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#ff5821">
+  <link rel="canonical" href="https://www.maventechno.com/services/airline-booking-engine">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Maven Technosoft">
+  <meta property="og:title" content="Airline Booking Engine Development | Maven Technosoft">
+  <meta property="og:description" content="Airline booking engine and IBE development: flight search, fares, seat selection, payments, refunds and GDS/NDC integration for airlines and OTAs.">
+  <meta property="og:url" content="https://www.maventechno.com/services/airline-booking-engine">
+  <meta property="og:image" content="https://www.maventechno.com/assets/img/og/airline-booking-engine.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Airline booking engine development by Maven Technosoft">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Airline Booking Engine Development | Maven Technosoft">
+  <meta name="twitter:description" content="Airline booking engine and IBE development: flight search, fares, seat selection, payments, refunds and GDS/NDC integration for airlines and OTAs.">
+  <meta name="twitter:image" content="https://www.maventechno.com/assets/img/og/airline-booking-engine.jpg">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.maventechno.com/services/airline-booking-engine#webpage",
+    "url": "https://www.maventechno.com/services/airline-booking-engine",
+    "name": "Airline Booking Engine Development | Maven Technosoft",
+    "description": "Airline booking engine and IBE development: flight search, fares, seat selection, payments, refunds and GDS/NDC integration for airlines and OTAs.",
+    "isPartOf": {
+      "@id": "https://www.maventechno.com/#website"
+    },
+    "about": {
+      "@id": "https://www.maventechno.com/#organization"
+    },
+    "inLanguage": "en-IN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.maventechno.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.maventechno.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Airline Booking Engines",
+        "item": "https://www.maventechno.com/services/airline-booking-engine"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.maventechno.com/services/airline-booking-engine#service",
+    "name": "Airline Booking Engine Development",
+    "serviceType": "Flight booking engine and IBE development",
+    "description": "Airline booking engine and IBE development: flight search, fares, seat selection, payments, refunds and GDS/NDC integration for airlines and OTAs.",
+    "url": "https://www.maventechno.com/services/airline-booking-engine",
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://www.maventechno.com/#organization",
+      "name": "Maven Technosoft",
+      "url": "https://www.maventechno.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.maventechno.com/assets/img/maven-logo.png",
+        "width": 1711,
+        "height": 766
+      }
+    },
+    "areaServed": "Worldwide",
+    "audience": {
+      "@type": "BusinessAudience",
+      "audienceType": "Airlines, OTAs and travel companies"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an airline booking engine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An airline booking engine, or internet booking engine (IBE), is the software on an airline or travel website and app that lets travellers search for flights, compare fares, choose seats and extras, pay and receive their e-ticket."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you integrate our booking engine with GDS and NDC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We connect booking engines to global distribution systems and IATA NDC APIs so fares, availability and bookings stay consistent across your channels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you add features to our existing booking engine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We can add or rebuild individual modules such as refunds, seat selection, ancillaries or the mobile booking journey without replacing the whole platform."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you build airline mobile apps as well?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our airline work includes mobile booking, a boarding pass wallet and live airplane tracking in a mobile app."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with OTAs and travel companies, not only airlines?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We build flight booking systems for airlines, travel companies and online travel agencies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you keep a booking engine fast during peak sales?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We design for peak traffic from the start, using caching, load testing and cloud infrastructure that scales with demand, and we monitor search and booking times after launch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can travellers manage their booking after purchase?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We build manage-booking features so travellers can change flights, add extras, cancel, request refunds and download boarding passes themselves."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Main CSS Files -->
+  <link href="/assets/css/tokens.css?v=2026112504" rel="stylesheet">
+  <link href="/assets/css/style.css?v=2026112504" rel="stylesheet">
+  <link href="/assets/css/maven-custom.css?v=2026112504" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-start">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@maventechno.com">info@maventechno.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:+917827121299">+91 7827 1212 99</a></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <a href="/" class="maven-logo-link" aria-label="Maven Technosoft - Inspired by Excellence">
+          <picture>
+            <source srcset="/assets/img/maven-logo.webp" type="image/webp">
+            <source srcset="/assets/img/maven-logo.png" type="image/png">
+            <img src="/assets/img/maven-logo.svg"
+                 width="250" height="112"
+                 alt="Maven Technosoft - Inspired by Excellence"
+                 class="maven-logo-img"
+                 onerror="this.onerror=null;this.src='/assets/img/maven-logo.svg';">
+          </picture>
+        </a>
+      </div>
+
+      <nav id="navbar" class="navbar" aria-label="Main">
+        <ul>
+          <li class="dropdown"><a class="nav-link" href="/industries"><span>Industries</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a>
+            <ul>
+              <li class="dropdown"><a href="/industries/airlines"><span>Airlines &amp; Travel</span> <i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+                <ul>
+                  <li><a href="/industries/airlines">Airlines overview</a></li>
+                  <li><a href="/industries/airlines#airline-ibe">IBE &amp; booking engines</a></li>
+                  <li><a href="/industries/airlines#airline-gds-ndc">GDS &amp; NDC integration</a></li>
+                  <li><a href="/industries/airlines#airline-ancillaries-loyalty">Ancillaries &amp; loyalty</a></li>
+                  <li><a href="/industries/airlines#airline-revenue-management">Revenue management</a></li>
+                  <li><a href="/industries/airlines#airline-ai-copilots">AI traveller copilots</a></li>
+                </ul>
+              </li>
+              <li><a href="/industries#eyecare-vision-health">Healthcare</a></li>
+              <li><a href="/industries#transportation-logistics">Transportation &amp; Logistics</a></li>
+              <li><a href="/industries#hospitality-otas">Hospitality &amp; OTAs</a></li>
+              <li><a href="/industries">All industries</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="/ai-solutions">AI Solutions</a></li>
+          <li class="dropdown"><a class="nav-link active" href="/services"><span>Services</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a>
+            <ul>
+              <li><a href="/services/airline-booking-engine">Airline booking engines</a></li>
+              <li><a href="/services/web-mobile-app-development">Web &amp; mobile apps</a></li>
+              <li><a href="/services/application-development-maintenance">Application maintenance</a></li>
+              <li><a href="/services/cloud-devops">Cloud &amp; DevOps</a></li>
+              <li><a href="/services/data-analytics">Data &amp; analytics</a></li>
+              <li><a href="/services/ai-development">AI &amp; ML development</a></li>
+              <li><a href="/services/ui-ux-cms">UI / UX &amp; CMS</a></li>
+              <li><a href="/services">All services</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="/case-studies">Case Studies</a></li>
+          <li><a class="nav-link" href="/insights">Insights</a></li>
+          <li><a class="nav-link" href="/about">About</a></li>
+          <li><a class="getstarted" href="/#contact">Book a call</a></li>
+        </ul>
+        <button type="button" class="bi bi-list mobile-nav-toggle" aria-label="Open menu" aria-controls="navbar" aria-expanded="false"></button>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Page Header ======= -->
+    <section class="breadcrumbs page-header">
+      <div class="container">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li aria-current="page">Airline Booking Engines</li>
+        </ol>
+        <h1>Airline Booking Engine Development</h1>
+        <p class="page-intro">We design and build flight booking engines for airlines, travel companies and OTAs: fast flight search, clear fares, seat selection, secure payment, refunds and changes, on the web and in mobile apps.</p>
+        <a href="/#contact" class="maven-btn svc-hero-btn">Discuss your booking engine</a>
+      </div>
+    </section><!-- End Page Header -->
+
+    <section class="svc-section">
+      <div class="container">
+        <div class="svc-prose" data-aos="fade-up">
+          <h2>A booking engine built around how airlines sell</h2>
+          <p>Your booking engine is your most important sales channel. Every extra step, slow search or confusing fare costs bookings, and every manual refund or change costs your team time. We build internet booking engines (IBEs) that make it simple for travellers to find a flight, understand what they are paying for and complete the purchase on any device.</p>
+          <p>Because airline retail depends on many connected systems, we treat integration as part of the product, not an afterthought. Our engines connect to global distribution systems and IATA NDC APIs, payment gateways and your back office, so fares, availability and bookings stay in sync across every channel.</p>
+          <p>We have delivered this work for an airline: a flight ticket booking system with a full refund flow, a mobile boarding pass wallet, live airplane tracking and a redesigned booking journey. You can read the details in our <a href="/case-studies#airline-booking-project">airline case study</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="svc-section section-bg">
+      <div class="container">
+          <div class="section-title cs-critical-title">
+            <span class="cs-eyebrow"><i class="bi bi-grid" aria-hidden="true"></i> Capabilities</span>
+            <h2>What Our Flight Booking Engines <span class="text-accent">Include</span></h2>
+            <p>Each module can be delivered as part of a new booking engine or added to the platform you already run.</p>
+          </div>
+          <div class="row gy-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+              <div class="cs-card">
+                <span class="cs-icon"><i class="bi bi-search" aria-hidden="true"></i></span>
+                <h3>Flight search &amp; fare display</h3>
+                <p>One-way, return and multi-city search with filters, fare families and clear price breakdowns, built to stay fast under heavy traffic.</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="cs-card">
+                <span class="cs-icon"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i></span>
+                <h3>Seat maps &amp; ancillaries</h3>
+                <p>Seat selection, bags, meals and bundles offered at the right moment in the journey, so add-on revenue grows without slowing checkout.</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="cs-card">
+                <span class="cs-icon"><i class="bi bi-credit-card" aria-hidden="true"></i></span>
+                <h3>Payments &amp; e-tickets</h3>
+                <p>Secure payment gateway integration, fraud checks and instant e-ticket and itinerary emails once the booking is confirmed.</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+              <div class="cs-card">
+                <span class="cs-icon"><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i></span>
+                <h3>Changes, cancellations &amp; refunds</h3>
+                <p>Self-service booking changes and an automated refund flow, from the traveller&rsquo;s request to the money being returned.</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="cs-card">
+                <span class="cs-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></span>
+                <h3>GDS &amp; NDC connectivity</h3>
+                <p>Connections to global distribution systems and NDC APIs so you can sell published fares and rich content in every channel.</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="cs-card">
+                <span class="cs-icon"><i class="bi bi-phone" aria-hidden="true"></i></span>
+                <h3>Mobile booking &amp; boarding passes</h3>
+                <p>Booking in your mobile app, a boarding pass wallet and live flight tracking that keep travellers informed up to the gate.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="svc-section">
+      <div class="container">
+        <div class="svc-steps" data-aos="fade-up">
+          <div class="section-title cs-critical-title">
+            <span class="cs-eyebrow"><i class="bi bi-signpost-split" aria-hidden="true"></i> How we work</span>
+            <h2>From Brief to <span class="text-accent">First Booking</span></h2>
+            <p>A clear four-step delivery path keeps scope, cost and launch date visible from day one.</p>
+          </div>
+          <ol class="cs-path">
+            <li class="cs-step">
+              <span class="cs-step-num" aria-hidden="true">01</span>
+              <span class="cs-step-icon"><i class="bi bi-search" aria-hidden="true"></i></span>
+              <h3>Discover</h3>
+              <p>Map your fares, channels, systems and business rules, and agree what the first release must do.</p>
+            </li>
+            <li class="cs-step">
+              <span class="cs-step-num" aria-hidden="true">02</span>
+              <span class="cs-step-icon"><i class="bi bi-vector-pen" aria-hidden="true"></i></span>
+              <h3>Design</h3>
+              <p>Design the booking journey and the integration plan, and test the screens with real users.</p>
+            </li>
+            <li class="cs-step">
+              <span class="cs-step-num" aria-hidden="true">03</span>
+              <span class="cs-step-icon"><i class="bi bi-code-slash" aria-hidden="true"></i></span>
+              <h3>Build &amp; integrate</h3>
+              <p>Build in short sprints, connect GDS, NDC and payments, and test every fare and refund rule.</p>
+            </li>
+            <li class="cs-step">
+              <span class="cs-step-num" aria-hidden="true">04</span>
+              <span class="cs-step-icon"><i class="bi bi-rocket-takeoff" aria-hidden="true"></i></span>
+              <h3>Launch &amp; support</h3>
+              <p>Go live in stages, monitor bookings and errors, and keep improving with ongoing support.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="svc-section section-bg">
+      <div class="container">
+          <div class="section-title cs-critical-title">
+            <span class="cs-eyebrow"><i class="bi bi-patch-check" aria-hidden="true"></i> Proof</span>
+            <h2>See It in <span class="text-accent">Action</span></h2>
+            <p>Read how we built a flight ticket booking system and mobile features for an airline.</p>
+          </div>
+          <div class="row g-3 justify-content-center">
+            <div class="col-lg-4">
+              <a class="cs-index-card" href="/case-studies#airline-booking-project">
+                <span class="cs-index-icon"><i class="bi bi-airplane" aria-hidden="true"></i></span>
+                <span class="cs-index-text">
+                  <span class="cs-index-tag">Airlines &amp; Travel</span>
+                  <span class="cs-index-title">Flight Ticket Booking System</span>
+                </span>
+                <i class="bi bi-arrow-right-short cs-index-arrow" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="svc-section">
+      <div class="container">
+        <div class="cs-chips" data-aos="fade-up">
+          <h3>Related capabilities</h3>
+          <ul>
+            <li>Internet booking engine (IBE)</li>
+            <li>Flight search &amp; pricing</li>
+            <li>GDS integration</li>
+            <li>NDC integration</li>
+            <li>Ancillary sales</li>
+            <li>Payment gateway integration</li>
+            <li>Airline refund automation</li>
+            <li>Mobile boarding pass</li>
+            <li>Real-time flight tracking</li>
+            <li>Booking UX redesign</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="svc-section section-bg">
+      <div class="container">
+          <div class="section-title cs-critical-title">
+            <span class="cs-eyebrow"><i class="bi bi-people" aria-hidden="true"></i> Who it is for</span>
+            <h2>Booking Engines for Every <span class="text-accent">Travel Seller</span></h2>
+          </div>
+          <div class="row gy-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+              <div class="cs-card">
+                <span class="cs-icon"><i class="bi bi-airplane" aria-hidden="true"></i></span>
+                <h3>Airlines</h3>
+                <p>Full-service, low-cost and regional carriers that want more direct bookings, richer offers and lower distribution costs.</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="cs-card">
+                <span class="cs-icon"><i class="bi bi-globe" aria-hidden="true"></i></span>
+                <h3>Online travel agencies</h3>
+                <p>OTAs that need fast multi-source flight search, strong conversion and reliable servicing for refunds and changes.</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="cs-card">
+                <span class="cs-icon"><i class="bi bi-briefcase" aria-hidden="true"></i></span>
+                <h3>Travel companies</h3>
+                <p>Tour operators and travel management companies that sell flights alongside hotels, packages or corporate travel.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="cs-faq section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Frequently Asked <span class="text-accent">Questions</span></h2>
+        </div>
+        <div class="cs-faq-list">
+          <details class="cs-faq-item">
+            <summary>What is an airline booking engine?</summary>
+            <p>An airline booking engine, or internet booking engine (IBE), is the software on an airline or travel website and app that lets travellers search for flights, compare fares, choose seats and extras, pay and receive their e-ticket.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>Can you integrate our booking engine with GDS and NDC?</summary>
+            <p>Yes. We connect booking engines to global distribution systems and IATA NDC APIs so fares, availability and bookings stay consistent across your channels.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>Can you add features to our existing booking engine?</summary>
+            <p>Yes. We can add or rebuild individual modules such as refunds, seat selection, ancillaries or the mobile booking journey without replacing the whole platform.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>Do you build airline mobile apps as well?</summary>
+            <p>Yes. Our airline work includes mobile booking, a boarding pass wallet and live airplane tracking in a mobile app.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>Do you work with OTAs and travel companies, not only airlines?</summary>
+            <p>Yes. We build flight booking systems for airlines, travel companies and online travel agencies.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>How do you keep a booking engine fast during peak sales?</summary>
+            <p>We design for peak traffic from the start, using caching, load testing and cloud infrastructure that scales with demand, and we monitor search and booking times after launch.</p>
+          </details>
+          <details class="cs-faq-item">
+            <summary>Can travellers manage their booking after purchase?</summary>
+            <p>Yes. We build manage-booking features so travellers can change flights, add extras, cancel, request refunds and download boarding passes themselves.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Page CTA ======= -->
+    <section class="page-cta">
+      <div class="container" data-aos="fade-up">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7">
+            <h2>Planning a new booking engine or an upgrade?</h2>
+            <p>Tell us what you're working on. A Maven domain expert will get back to you within one business day.</p>
+            <a href="/#contact" class="maven-btn">Talk to Us</a>
+          </div>
+          <div class="col-lg-5">
+            <div class="related-links">
+              <h3>Explore more</h3>
+            <a href="/industries/airlines" class="related-link">Airline &amp; Travel Software <i class="bx bx-chevron-right"></i></a>
+            <a href="/case-studies#airline-booking-project" class="related-link">Airline Case Study <i class="bx bx-chevron-right"></i></a>
+            <a href="/services/web-mobile-app-development" class="related-link">Web &amp; Mobile App Development <i class="bx bx-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Page CTA -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Maven Technosoft</h3>
+            <address>
+              Maven Technosoft Pvt. Ltd.<br>
+              <a class="map-link" href="https://maps.app.goo.gl/sAD6qUbbWe764KVE6" target="_blank" rel="noopener">A-23 Central Auto Market, Block A, Sector 16<br>
+              Noida, Uttar Pradesh 201301, India<span class="visually-hidden"> (opens Google Maps in a new tab)</span></a>
+            </address>
+            <p>
+              <strong>Phone:</strong> <a href="tel:+917827121299">+91 7827 1212 99</a><br>
+              <strong>Email:</strong> <a href="mailto:info@maventechno.com">info@maventechno.com</a>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 footer-links">
+            <h4>Industries</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/industries/airlines">Airlines &amp; Travel</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/industries#eyecare-vision-health">Healthcare</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/industries#transportation-logistics">Transportation &amp; Logistics</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/industries#hospitality-otas">Hospitality &amp; OTAs</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 footer-links">
+            <h4>Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/services/airline-booking-engine">Airline Booking Engines</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/ai-solutions">AI Solutions</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/services/web-mobile-app-development">Web &amp; Mobile</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/services/application-development-maintenance">Application Maintenance</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/services/cloud-devops">Cloud &amp; DevOps</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/services/data-analytics">Big Data &amp; Analytics</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/services/ui-ux-cms">UI / UX &amp; CMS</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/about">About us</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/#leadership">Leadership</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/case-studies">Case Studies</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/insights">Insights</a></li>
+              <li><i class="bx bx-chevron-right" aria-hidden="true"></i> <a href="/#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Stay in the Loop</h4>
+            <p>Get occasional notes from Maven on AI, data and travel-tech trends. No spam.</p>
+            <form id="maven-newsletter-form" action="/api/contact" method="POST">
+              <div class="newsletter-field">
+                <input type="email" name="email" placeholder="Your email" aria-label="Your email" required>
+                <input type="submit" value="Subscribe">
+              </div>
+              <div class="newsletter-feedback" aria-live="polite"></div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom d-lg-flex align-items-center py-4">
+      <div class="me-lg-auto text-center text-lg-start">
+        <div class="copyright">&copy; 2026 Maven Technosoft Pvt. Ltd. All rights reserved.</div>
+        <ul class="footer-legal">
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
+        <a href="https://www.facebook.com/MavenTechnosoft/" class="facebook" aria-label="Facebook" target="_blank" rel="noopener"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/maven-technosoft/" class="linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/assets/js/main.js?v=2026112504"></script>
+
+  <!-- Maven newsletter handler -->
+  <script src="/assets/js/maven-contact.js?v=2026112504"></script>
+
+</body>
+
+</html>
